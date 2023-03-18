@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { preview } from "../assets";
+import { getRandomPrompt } from "../utils";
+import { Loader, FormField } from "../components";
 
 const CreatePost = () => {
-  return (
-    <div>CreatePost</div>
-  )
-}
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    prompt: "",
+    photo: "",
+  });
+  const [genaratingImg, setGeneratingImg] = useState(false);
 
-export default CreatePost
+  const navigate = useNavigate();
+  return <section className="max-w-7xl mx-auto"></section>;
+};
+
+export default CreatePost;

@@ -3,8 +3,17 @@ import {Loader, Card,FormField} from "../components"
 const Home = () => {
   const [loading,setLoading] = useState(false)
   const [posts,setPosts] = useState(null)
+  const RenderCards =({data,title})=>{
+    if(data?.length >0) 
+    {return data.map((post)=><Card key={post.id} {...post}/>)
+    }else{
+      return <h2 className='font-bold text-[#6449ff] text-xl mt-5 uppercase'>
+      {title}
+    </h2>
+    }
 
-  const [searchText, setSearchText] = useState("abc")
+  }
+  const [searchText, setSearchText] = useState("")
   return (
     <section className='max-w-7xl mx-auto'>
       <div>
@@ -32,9 +41,18 @@ const Home = () => {
                 Search Results for <span className='text-[#222328]'>{searchText}</span>
               </h2>
             )}
-            <div className='grid lg:grid-cols-4 sm:grid-cols-'>
+            <div className='grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 gap-3'>
               
-
+              {
+                  searchText ? (
+                    <RenderCards
+                      data={[]}
+                      title="No search results found"/>
+                  ):
+                  <RenderCards
+                      data={[]}
+                      title="No posts found"/>
+              }
             </div>
             </>
           )
