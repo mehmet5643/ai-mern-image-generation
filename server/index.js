@@ -2,6 +2,8 @@ import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./mongodb/connect.js";
+import postRoutes from "./routes/postRoutes.js"
+import dalleRoutes from "./routes/dalleRoutes.js"
 
 dotenv.config();
 
@@ -13,6 +15,9 @@ app.get("/", (req, res) => {
     res.send("Hello from DALL-E API");
     }
 );
+
+app.use("/api/v1/posts",postRoutes);
+app.use("/api/v1/dalle",dalleRoutes);
 
 const startServer = async () =>{
     try{
