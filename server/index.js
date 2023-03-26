@@ -22,7 +22,7 @@ app.use("/api/v1/dalle",dalleRoutes);
 const startServer = async () =>{
     try{
         await connectDB(process.env.MONGODB_URL);
-        app.listen(8080,()=>console.log("Server has Start in http://localhost:8080"))
+        app.listen(8080,()=>console.log("Server has Start in https://dall-e-0v61.onrender.com"))
     }
     catch(err){
         console.log(err);
