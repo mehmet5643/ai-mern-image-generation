@@ -19,5 +19,8 @@
     "nodemon": "^2.0.21",
     "openai": "^3.2.1"
   },
+  "engines": {
+    "node": "18.12.1"
+  },
   "type": "module"
 }
