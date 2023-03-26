@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
     }
 );
 
-app.use("/api/v1/posts",postRoutes);
+app.use("/api/v1/post",postRoutes);
 app.use("/api/v1/dalle",dalleRoutes);
 
 const startServer = async () =>{

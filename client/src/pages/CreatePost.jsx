@@ -64,7 +64,8 @@ const CreatePost = () => {
           body: JSON.stringify({ ...form }),
         });
 
-        await response.json();
+        await console.log(response.json());
+
         alert('Success');
         navigate('/');
       } catch (err) {
@@ -90,7 +91,7 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="Ex., Mehmet Ali, Eylül"
+            placeholder="Ex., john doe"
             value={form.name}
             handleChange={handleChange}
           />
@@ -99,7 +100,7 @@ const CreatePost = () => {
             labelName="Prompt"
             type="text"
             name="prompt"
-            placeholder="I love you to so much my lady"
+            placeholder="An Impressionist oil painting of sunflowers in a purple vase…"
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
@@ -142,6 +143,7 @@ const CreatePost = () => {
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">** Once you have created the image you want, you can share it with others in the community **</p>
           <button
+            onClick={handleSubmit}
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
